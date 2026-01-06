@@ -1,3 +1,5 @@
+
+# Using the set method
 def find_duplicates(nums):
 	seen = set()
 	duplicates = set()
