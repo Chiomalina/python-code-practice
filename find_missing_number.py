@@ -3,14 +3,14 @@
 
 
 def find_missing_number(nums):
-	length_of_nums = len(nums)
-	expected_sum_of_nums = length_of_nums * ( length_of_nums + 1 ) // 2
-	sum_of_nums = sum(nums)
+	length_of_numbers = len(nums)
+	expected_sum_of_numbers = length_of_numbers * (length_of_numbers + 1) // 2
+	actual_sum_of_numbers = sum(nums)
 
-	missing_num =  expected_sum_of_nums - sum_of_nums
+	missing_number = expected_sum_of_numbers - actual_sum_of_numbers
 
-	return missing_num
+	return missing_number
 
-nums = [3, 0, 1]
+list_of_nums = [0, 1, 3]
 
-print(find_missing_number(nums))
+print(find_missing_number(list_of_nums))

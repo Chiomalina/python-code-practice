@@ -2,16 +2,36 @@
 # duplicate numbers (each duplicate should appear only once in the result).
 
 # Using the set method
-def find_duplicates(nums):
+def find_duplicates_1(nums):
 	seen = set()
-	duplicate = set()
+	duplicates = set()
 
 	for num in nums:
 		if num in seen:
-			duplicate.add(num)
+			duplicates.add(num)
 		seen.add(num)
+
+	return list(duplicates)
+
+
+def find_duplicates_2(nums):
+	seen = {}
+	duplicate = []
+
+	for num in nums:
+		if num in seen:
+			if seen[num] == 1:
+				duplicate.append(num)
+			seen[num] += 1
+
+		else:
+			seen[num] = 1
 
 	return duplicate
 
 
-print(find_duplicates([1, 2, 3, 4, 2, 1, 2, 5]))
+
+list_of_nums = [1, 2, 3, 4, 2, 1, 2, 5]
+
+print(find_duplicates_1(list_of_nums))
+print(find_duplicates_2(list_of_nums))
